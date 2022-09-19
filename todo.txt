@@ -1,0 +1,1 @@
+ritz transform target cannot be re-exported from elsewhere (e.g. export stage, or export { stage })

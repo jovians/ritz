@@ -1,0 +1,54 @@
+{
+  "name": "ritz2",
+  "version": "0.0.51",
+  "index": "index.js",
+  "homepage": "https://github.com/jovians/ritz#readme",
+  "bugs": {
+    "url": "https://github.com/jovians/ritz/issues",
+    "email": "jovian.technologies@gmail.com"
+  },
+  "scripts": {
+    "prepare": "npm run clean-js --silent && tsc && node index",
+    "clean-js": "sh scripts/z-clean-js.sh || true",
+    "test": "tsc && node main recompile -f && tsc && node --enable-source-maps tests/run.all",
+    "before-commit": "npm run clean-js --silent && ritz revert"
+  },
+  "dependencies": {
+    "@jovian/type-tools": "^6.1.37",
+    "colors": "^1.4.0",
+    "commander": "^9.4.0",
+    "dedent": "^0.7.0",
+    "fast-glob": "^3.2.11",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@jovian/fourq": "^1.0.23",
+    "@types/node": "^18.7.16",
+    "esprima": "^4.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.1",
+    "tslint": "^5.20.1",
+    "typescript": "^4.8.2"
+  },
+  "bin": {
+    "ritz-pkg-entrypoint": "pkg-entry.js",
+    "ritz": "main.sh"
+  },
+  "keywords": [
+    "ritz",
+    "ritz transform"
+  ],
+  "pkg": {
+    "scripts": [],
+    "assets": [],
+    "targets": [
+      "node16-macos-arm64",
+      "node14-macos-arm64",
+      "node14-macos-x64",
+      "node14-linux-x64",
+      "node14-linux-arm64"
+    ],
+    "outputPath": "dist"
+  },
+  "license": "UNLICENSED"
+}
